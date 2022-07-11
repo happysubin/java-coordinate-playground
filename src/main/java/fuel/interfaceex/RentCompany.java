@@ -1,4 +1,6 @@
-package fuel;
+package fuel.interfaceex;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +24,9 @@ public class RentCompany {
                     (int)car.getDistancePerLiter() + "리터\n";
         }
         return result;
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }

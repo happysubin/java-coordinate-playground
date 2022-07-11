@@ -1,13 +1,16 @@
-package fuel;
+package fuel.interfaceex;
 
-import fuel.concretecar.Avante;
-import fuel.concretecar.K5;
-import fuel.concretecar.Sonata;
+import fuel.interfaceex.implementation.Avante;
+import fuel.interfaceex.implementation.K5;
+import fuel.interfaceex.implementation.Sonata;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import java.util.List;
 
-public class RentCompanyTest {
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
+class RentCompanyTest {
 
     private static final String NEWLINE = System.getProperty("line.separator");
 
@@ -29,5 +32,9 @@ public class RentCompanyTest {
                         "K5 : 30리터" + NEWLINE
         );
 
+        List<Car> cars = company.getCars();
+        for (Car car : cars) {
+            System.out.println(car.getChargeQuantity());
+        }
     }
 }

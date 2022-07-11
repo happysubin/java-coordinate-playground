@@ -28,4 +28,6 @@ public abstract class Car {
     public double getChargeQuantity() {
         return getTripDistance() / getDistancePerLiter();
     }
+
+
 }
