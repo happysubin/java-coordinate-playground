@@ -15,8 +15,6 @@ public class PositionTest {
         Position position = new Position(num);
 
         //then
-
         Assertions.assertThat(position.getPosition()).isEqualTo(9);
-
     }
 }

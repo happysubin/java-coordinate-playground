@@ -1,2 +1,6 @@
-package coordinatecalculator;public interface CoordinatesCalculator {
+package coordinatescalculator;
+
+public interface CoordinatesCalculator {
+
+    //Shape create(Coordinates coordinates);
 }
