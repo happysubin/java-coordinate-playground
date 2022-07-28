@@ -20,8 +20,6 @@ public class CoordinatesTest {
 
         Assertions.assertThat(list.get(1).getX().getPosition()).isEqualTo(3);
         Assertions.assertThat(list.get(1).getY().getPosition()).isEqualTo(7);
-
-
     }
 
 
