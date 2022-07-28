@@ -2,16 +2,12 @@ package challenge.fuel;
 
 public class K5 extends Car{
 
-    private final String name = "K5";
-    private final int distancePerLiter = 13;
+    private final String name;
+    private static final double DISTANCE_PER_LITER = 13;
 
     public K5(int tripDistance) {
-        super(tripDistance);
-    }
-
-    @Override
-    public double getDistancePerLiter() {
-        return distancePerLiter;
+        super(tripDistance, DISTANCE_PER_LITER);
+        this.name = "K5";
     }
 
     @Override

@@ -2,16 +2,12 @@ package challenge.fuel;
 
 public class Sonata extends Car {
 
-    private final String name = "Sonata";
-    private final int distancePerLiter = 10;
+    private final String name;
+    private static final double DISTANCE_PER_LITER = 10;
 
     public Sonata(int tripDistance) {
-        super(tripDistance);
-    }
-
-    @Override
-    public double getDistancePerLiter() {
-        return distancePerLiter;
+        super(tripDistance, DISTANCE_PER_LITER);
+        this.name = "Sonata";
     }
 
     @Override
