@@ -18,12 +18,19 @@ public class InputView {
         this.scanner = new Scanner(System.in);
     }
 
-    public String getShape(){
+    public List<Position> getShape(){
         String stringFormatPosition = inputPosition();
         List<PositionDto> dtoList = splitPosition(stringFormatPosition);
         validatePositionRange(dtoList);
+        return createShape(dtoList);
+    }
 
-        return stringFormatPosition;
+    private List<Position> createShape(List<PositionDto> dtoList) {
+        List<Position> result = new ArrayList<>();
+        for (PositionDto dto : dtoList) {
+            result.add(new Position(dto.getX(), dto.getY()));
+        }
+        return result;
     }
 
     public String inputPosition() {

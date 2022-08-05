@@ -22,10 +22,13 @@ public class InputViewTest {
             }
         };
         //when
-        String shape = inputView.getShape();
+        List<Position> result = inputView.getShape();
 
         //then
-        assertThat(shape).isEqualTo(positionExample);
+        assertThat(result.get(0).getX()).isEqualTo(3);
+        assertThat(result.get(0).getY()).isEqualTo(10);
+        assertThat(result.get(1).getX()).isEqualTo(4);
+        assertThat(result.get(1).getY()).isEqualTo(10);
     }
 
     @Test
