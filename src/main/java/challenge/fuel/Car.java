@@ -15,3 +15,5 @@ public abstract class Car implements CarModule {
         return tripDistance / distancePerLiter;
     }
 }
+
+//많이 겹치는 부분은 추상 메서드를 용해 중복을 줄인다.
