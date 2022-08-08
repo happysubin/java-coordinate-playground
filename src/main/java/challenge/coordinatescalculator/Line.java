@@ -2,16 +2,9 @@ package challenge.coordinatescalculator;
 
 import java.util.List;
 
-public class Line implements Shape{
-
-    private List<Position> positions;
+public class Line extends AbstractShape{
 
     public Line(List<Position> positions) {
-        this.positions = positions;
-    }
-
-    @Override
-    public List<Position> getPositions() {
-        return positions;
+        super(positions);
     }
 }
