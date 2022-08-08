@@ -11,7 +11,6 @@ public class InputView {
     private static String INVALID_POSITION_FORMAT = "좌표의 형식과 다릅니다";
     private static String INVALID_POSITION_RANGE = "좌표의 범위는 0부터 24까지입니다.";
 
-
     private Scanner scanner;
 
     public InputView() {

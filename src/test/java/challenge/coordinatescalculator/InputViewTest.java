@@ -25,6 +25,7 @@ public class InputViewTest {
         List<Position> result = inputView.getShape();
 
         //then
+        assertThat(result.size()).isEqualTo(2);
         assertThat(result.get(0).getX()).isEqualTo(3);
         assertThat(result.get(0).getY()).isEqualTo(10);
         assertThat(result.get(1).getX()).isEqualTo(4);
@@ -44,6 +45,19 @@ public class InputViewTest {
 
     @Test
     void failValidatePositionFormat(){
+        //given
+        InputView inputView = new InputView();
+        String positionExampleV2 = "(3,10)";
+
+        //when
+        assertThatThrownBy(() -> {
+            inputView.validatePositionFormat(positionExampleV2);
+            //then
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void failValidatePositionFormatV2(){
         //given
         InputView inputView = new InputView();
 
