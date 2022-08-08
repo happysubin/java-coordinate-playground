@@ -2,7 +2,7 @@ package challenge.coordinatescalculator;
 
 import java.util.List;
 
-public class AbstractShape implements Shape{
+public abstract class AbstractShape implements Shape{
 
     private List<Position> positions;
 

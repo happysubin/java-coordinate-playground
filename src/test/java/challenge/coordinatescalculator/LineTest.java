@@ -21,4 +21,17 @@ public class LineTest {
         //then
         assertThat(shape.getPositions().size()).isEqualTo(2);
     }
+
+    @Test
+    void calculateLine() {
+        //given
+        List<Position> positions = Arrays.asList(new Position(10,10), new Position(14, 15));
+        Shape shape = ShapeGroup.getShape(positions.size(), positions);
+
+        //when
+        double result = shape.calculateArea();
+
+        //then
+        assertThat(result).isEqualTo(6.4031, offset(0.00099));
+    }
 }
