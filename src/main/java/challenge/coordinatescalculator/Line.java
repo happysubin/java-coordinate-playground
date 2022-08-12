@@ -16,4 +16,5 @@ public class Line extends AbstractShape{
         double result = Math.sqrt(xDistance + yDistance);
         return result;
     }
+    // 선이 Area를 가지는 것이 말이 안된다. 인터페이스 타입을 사용하는데 어떻게 해야 이를 해결할 수 있을 까?
 }
