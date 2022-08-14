@@ -12,6 +12,7 @@ public class Rectangle extends AbstractShape {
 
     public final static String PRINT_LINE_DISTANCE_TEXT = "사각형 넓이는 ";
     public static final String INVALID_RECTANGLE = "직사각형 모양이 아닙니다.";
+    private static final int NUM_OF_TYPES_OF_RECTANGLE_COORDINATES = 2;
 
     public Rectangle(List<Position> positions) {
         super(positions);
@@ -40,7 +41,7 @@ public class Rectangle extends AbstractShape {
             ySet.add(position.getY());
         }
 
-        if(xSet.size() != 2 || ySet.size() != 2){
+        if(xSet.size() != NUM_OF_TYPES_OF_RECTANGLE_COORDINATES || ySet.size() != NUM_OF_TYPES_OF_RECTANGLE_COORDINATES){
             throw new IllegalStateException(INVALID_RECTANGLE);
         }
     }
