@@ -14,4 +14,14 @@ public abstract class AbstractShape implements Shape{
     public List<Position> getPositions() {
         return positions;
     }
+
+    @Override
+    public boolean hasPoint(int x, int y) {
+        for (Position position : positions) {
+            if(position.isRightPosition(x, y)){
+                return true;
+            }
+        }
+        return false;
+    }
 }

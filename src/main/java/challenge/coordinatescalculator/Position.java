@@ -1,5 +1,7 @@
 package challenge.coordinatescalculator;
 
+import java.util.Objects;
+
 public class Position {
     private double x;
     private double y;
@@ -15,5 +17,10 @@ public class Position {
 
     public double getY() {
         return y;
+    }
+
+
+    public boolean isRightPosition(double x, double y){
+        return this.x == x & this.y == y;
     }
 }
