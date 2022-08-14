@@ -6,18 +6,27 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class RectangleTest {
 
     @Test
-    void createSuccess() {
+    void successValidateTest(){
         //given
-        List<Position> positions = Arrays.asList(new Position(1,2), new Position(3, 4), new Position(5, 3), new Position(9, 4));
-
-        //when
+        List<Position> positions = Arrays.asList(new Position(2,2), new Position(2, 4), new Position(4, 4), new Position(4, 2));
         Shape shape = ShapeGroup.getShape(positions.size(), positions);
 
-        //then
-        assertThat(shape.getPositions().size()).isEqualTo(4);
+        //when, then
+        shape.validatePositions();
+    }
+
+    @Test
+    void failValidateTest() {
+        //given
+        List<Position> positions = Arrays.asList(new Position(2, 2), new Position(3, 4), new Position(4, 4), new Position(4, 2));
+
+        assertThatThrownBy(() -> {
+            Shape shape = ShapeGroup.getShape(positions.size(), positions);
+        }).isInstanceOf(IllegalStateException.class);
     }
 }

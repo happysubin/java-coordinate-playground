@@ -5,6 +5,7 @@ import java.util.List;
 public class Line extends AbstractShape{
 
     public final static String PRINT_LINE_DISTANCE_TEXT = "두 점 사이의 거리는 ";
+    public final static String UNSUPPORTED_METHOD_LINE = "LINE 클래스에서는 지원하지 않는 메서드입니다.";
 
     public Line(List<Position> positions) {
         super(positions);
@@ -24,5 +25,10 @@ public class Line extends AbstractShape{
     @Override
     public String getDistanceInfo() {
         return PRINT_LINE_DISTANCE_TEXT + calculateArea();
+    }
+
+    @Override
+    public void validatePositions() {
+        throw new UnsupportedOperationException(UNSUPPORTED_METHOD_LINE);
     }
 }
