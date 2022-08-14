@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 public class InputView {
 
+    private static String INPUT_INFORMATION= "좌표를 입력하세요.";
     private static String INVALID_POSITION_FORMAT = "좌표의 형식과 다릅니다";
     private static String INVALID_POSITION_RANGE = "좌표의 범위는 0부터 24까지입니다.";
 
@@ -33,6 +34,7 @@ public class InputView {
     }
 
     public String inputPosition() {
+        System.out.println(INPUT_INFORMATION);
         return scanner.next();
     }
 

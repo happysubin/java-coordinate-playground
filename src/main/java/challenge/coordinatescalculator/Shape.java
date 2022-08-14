@@ -6,4 +6,5 @@ public interface Shape {
     List<Position> getPositions();
     double calculateArea();
     boolean hasPoint(int x, int y);
+    void printDistance();
 }

@@ -12,4 +12,9 @@ public class Triangle extends AbstractShape {
     public double calculateArea() {
         return 0;
     }
+
+    @Override
+    public void printDistance() {
+
+    }
 }
