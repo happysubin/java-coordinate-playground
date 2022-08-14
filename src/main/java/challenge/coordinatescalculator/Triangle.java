@@ -1,5 +1,6 @@
 package challenge.coordinatescalculator;
 
+import java.awt.*;
 import java.util.List;
 
 public class Triangle extends AbstractShape {
@@ -15,18 +16,21 @@ public class Triangle extends AbstractShape {
     @Override
     public double calculateArea() {
         List<Position> positions = getPositions();
-        double firstXDistance = Math.pow(positions.get(0).getX() - positions.get(1).getX(), 2);
-        double firstYDistance = Math.pow(positions.get(0).getY() - positions.get(1).getY(), 2);
-        double secondXDistance = Math.pow(positions.get(1).getX() - positions.get(2).getX(), 2);
-        double secondYDistance = Math.pow(positions.get(1).getY() - positions.get(2).getY(), 2);
-        double thirdXDistance = Math.pow(positions.get(2).getX() - positions.get(0).getX(), 2);
-        double thirdYDistance = Math.pow(positions.get(2).getY() - positions.get(0).getY(), 2);
-        double firstResult = Math.sqrt(firstXDistance + firstYDistance);
-        double secondResult = Math.sqrt(secondXDistance + secondYDistance);
-        double thirdResult = Math.sqrt(thirdXDistance + thirdYDistance);
+        Position firstPosition = positions.get(0);
+        Position secondPosition = positions.get(1);
+        Position thirdPosition = positions.get(2);
 
-        double s = (firstResult + secondResult + thirdResult) / 2;
-        double area = Math.sqrt( s * (s - firstResult) * (s - secondResult) * ( s - thirdResult));
+        double firstDistance = firstPosition.calculateDistance(secondPosition);
+        double secondDistance = secondPosition.calculateDistance(thirdPosition);
+        double thirdDistance = thirdPosition.calculateDistance(firstPosition);
+
+        double area = heronFormula(firstDistance, secondDistance, thirdDistance);
+        return area; //반 올림
+    }
+
+    public double heronFormula(double a, double b, double c){
+        double s = (a + b + c) / 2;
+        double area = Math.sqrt( s * (s - a) * (s - b) * ( s - c));
         return Math.round(area); //반 올림
     }
 

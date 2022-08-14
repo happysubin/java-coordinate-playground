@@ -19,8 +19,17 @@ public class Position {
         return y;
     }
 
-
     public boolean isRightPosition(double x, double y){
         return this.x == x & this.y == y;
     }
+
+    public double calculateDistance (Position position){
+        return position.calculate(x, y);
+    }
+
+    private Double calculate(double x, double y) {
+        return Math.sqrt(Math.pow(this.x - x, 2) + Math.pow(this.y -y, 2));
+    }
+
+
 }
