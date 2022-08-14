@@ -22,7 +22,7 @@ public class Line extends AbstractShape{
 
 
     @Override
-    public void printDistance() {
-        System.out.println(PRINT_LINE_DISTANCE_TEXT + calculateArea());
+    public String getDistanceInfo() {
+        return PRINT_LINE_DISTANCE_TEXT + calculateArea();
     }
 }

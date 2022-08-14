@@ -34,4 +34,17 @@ public class LineTest {
         //then
         assertThat(result).isEqualTo(6.4031, offset(0.00099));
     }
+
+    @Test
+    void printTest(){
+        //given
+        List<Position> positions = Arrays.asList(new Position(10,10), new Position(14, 15));
+        Shape shape = ShapeGroup.getShape(positions.size(), positions);
+
+        //when
+        String distanceInfo = shape.getDistanceInfo();
+
+        //then
+        assertThat(distanceInfo).isEqualTo("두 점 사이의 거리는 6.4031242374328485");
+    }
 }

@@ -14,7 +14,7 @@ public class Rectangle extends AbstractShape {
     }
 
     @Override
-    public void printDistance() {
-
+    public String getDistanceInfo() {
+        return null;
     }
 }

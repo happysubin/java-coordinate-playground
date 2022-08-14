@@ -9,6 +9,6 @@ public class Application {
         List<Position> positions= inputView.getShape();
         Shape shape = ShapeGroup.getShape(positions.size(), positions);
         OutputView.createOutView(shape);
-        shape.printDistance();
+        System.out.println(shape.getDistanceInfo());
     }
 }
